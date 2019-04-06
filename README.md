@@ -1,2 +1,2 @@
 # Hello-World
-My first attempts with Python :)
+My first attempts of automation using Python and Selenium WebDriver :)
