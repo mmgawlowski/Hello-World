@@ -2,7 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
+
 import time
+
+
 browser = webdriver.Chrome()
 browser.maximize_window()
 
@@ -38,10 +42,8 @@ browser.find_element_by_xpath('//span[text()="Zobacz wszystkie oferty"]').click(
 element = wait(browser, 10).until(
 EC.title_contains('Oferty pracy'))
 
-browser.find_element_by_xpath('//span[text()="Typ"]').click()
-browser.find_element_by_xpath('//li[text()="Full-Time"]').click()
-browser.find_element_by_xpath('//span[text()="Obszar"]').click()
-browser.find_element_by_xpath('//li[text()="Testing/Integration & Verification"]').click()
+Select(browser.find_element_by_name('type')).select_by_value("10")
+Select(browser.find_element_by_name('section')).select_by_value("37")
 browser.find_element_by_xpath('//button[@class="btn btn--red btn--icon"]').click()
 time.sleep(2)
 browser.find_element_by_link_text('Test Automation Engineer').click()
