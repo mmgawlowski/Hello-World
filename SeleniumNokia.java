@@ -10,10 +10,11 @@ public class SeleniumNokia {
         System.setProperty("webdriver.chrome.driver", "D:\\JetBrains\\IntelliJ IDEA Community Edition 2019.3.3\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://google.com");
         WebDriverWait wait = new WebDriverWait(driver, 10);
-
         WebElement element;
+        
+        driver.get("https://google.com");
+        
         element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
         element.sendKeys("Dlaczego warto pracować w Nokii");
         element.submit();
