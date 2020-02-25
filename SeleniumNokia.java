@@ -28,9 +28,7 @@ public class SeleniumNokia {
 
         element = wait.until(
                 ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Zobacz wszystkie oferty']")));
-
         driver.executeScript("arguments[0].scrollIntoView({behavior: \"smooth\", block: \"center\"});", element);
-
         element = wait.until(
                 ExpectedConditions.visibilityOfElementLocated((By.xpath("//span[text()='Zobacz wszystkie oferty']"))));
         Thread.sleep(2000);
